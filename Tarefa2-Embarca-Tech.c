@@ -22,3 +22,9 @@ void init_gpio()
     gpio_init(BUZZER);
     gpio_set_dir(BUZZER, GPIO_OUT);
 }
+
+void turn_off_all_leds() {
+    gpio_put(LED_GREEN, 0);
+    gpio_put(LED_BLUE, 0);
+    gpio_put(LED_RED, 0);
+}
