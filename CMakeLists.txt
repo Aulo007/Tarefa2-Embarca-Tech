@@ -41,8 +41,8 @@ pico_set_program_name(Tarefa2-Embarca-Tech "Tarefa2-Embarca-Tech")
 pico_set_program_version(Tarefa2-Embarca-Tech "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(Tarefa2-Embarca-Tech 0)
-pico_enable_stdio_usb(Tarefa2-Embarca-Tech 0)
+pico_enable_stdio_uart(Tarefa2-Embarca-Tech 1)
+pico_enable_stdio_usb(Tarefa2-Embarca-Tech 1)
 
 # Add the standard library to the build
 target_link_libraries(Tarefa2-Embarca-Tech
