@@ -2,7 +2,6 @@
 #include "pico/stdlib.h"
 
 // Definição dos pinos
-
 #define LED_GREEN 11
 #define LED_BLUE 12
 #define LED_RED 13
@@ -41,4 +40,18 @@ void display_menu()
     printf("6 - Acionar Buzzer\n\r");
     printf("7 - Reboot\n\r");
     printf("Digite um comando: \n\r");
+}
+
+int main()
+{
+    stdio_init_all();
+    sleep_ms(2000); // Aguarda inicialização do USB
+
+    init_gpio();
+    turn_off_all_leds(); // Garante que todos os LEDs começam desligados
+
+    printf("\n\rIniciando sistema...\n\r");
+    sleep_ms(1000);
+
+    return 0;
 }
