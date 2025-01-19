@@ -53,5 +53,66 @@ int main()
     printf("\n\rIniciando sistema...\n\r");
     sleep_ms(1000);
 
+    while (1)
+    {
+        display_menu();
+
+        char cmd = getchar(); // Aguarda entrada do usuário
+        printf("Comando recebido: %c\n\r", cmd);
+
+        switch (cmd)
+        {
+        case '1':
+            turn_off_all_leds();
+            gpio_put(LED_GREEN, 1);
+            printf("LED Verde ligado!\n\r");
+            break;
+
+        case '2':
+            turn_off_all_leds();
+            gpio_put(LED_BLUE, 1);
+            printf("LED Azul ligado!\n\r");
+            break;
+
+        case '3':
+            turn_off_all_leds();
+            gpio_put(LED_RED, 1);
+            printf("LED Vermelho ligado!\n\r");
+            break;
+
+        case '4':
+            gpio_put(LED_GREEN, 1);
+            gpio_put(LED_BLUE, 1);
+            gpio_put(LED_RED, 1);
+            printf("Luz Branca ativada!\n\r");
+            break;
+
+        case '5':
+            turn_off_all_leds();
+            printf("Todos LEDs desligados!\n\r");
+            break;
+
+        case '6':
+            printf("Acionando Buzzer por 2 segundos...\n\r");
+            gpio_put(BUZZER, 1);
+            sleep_ms(2000);
+            gpio_put(BUZZER, 0);
+            printf("Buzzer desligado!\n\r");
+            break;
+
+        case '7':
+            printf("Reiniciando sistema...\n\r");
+            watchdog_enable(1, 1);
+            while (1)
+                ;
+            break;
+
+        default:
+            printf("Comando invalido!\n\r");
+            break;
+        }
+
+        sleep_ms(500); // Pequeno delay entre comandos
+    }
     return 0;
 }
