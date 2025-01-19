@@ -23,8 +23,22 @@ void init_gpio()
     gpio_set_dir(BUZZER, GPIO_OUT);
 }
 
-void turn_off_all_leds() {
+void turn_off_all_leds()
+{
     gpio_put(LED_GREEN, 0);
     gpio_put(LED_BLUE, 0);
     gpio_put(LED_RED, 0);
+}
+
+void display_menu()
+{
+    printf("\n\r=== BitDogLab Control System ===\n\r");
+    printf("1 - Ligar LED Verde\n\r");
+    printf("2 - Ligar LED Azul\n\r");
+    printf("3 - Ligar LED Vermelho\n\r");
+    printf("4 - Ligar Luz Branca (todos LEDs)\n\r");
+    printf("5 - Desligar todos LEDs\n\r");
+    printf("6 - Acionar Buzzer\n\r");
+    printf("7 - Reboot\n\r");
+    printf("Digite um comando: \n\r");
 }
